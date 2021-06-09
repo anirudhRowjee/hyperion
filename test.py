@@ -41,8 +41,31 @@ def validate_test(command_list, target_output_list):
 
 
 class BasicTest(unittest.TestCase):
+    # sanity checks
     def test_basic_prompt(self):
         self.assertTrue(validate_test([".exit"], ["MomoDB > "]))
+
+
+class QueryTest(unittest.TestCase):
+    def test_single_row_insert(self):
+        # runs tests for basic queries
+        self.assertTrue(
+            validate_test(
+                ["insert 1 A abc@amail.com", "select", ".exit"],
+                [
+                    "MomoDB > Executed",
+                    "MomoDB > (1, A, abc@amail.com)",
+                    "Executed",
+                    "MomoDB > ",
+                ],
+            )
+        )
+
+    def test_insertion_error(self):
+        # expect the DB to fail when you insert too many rows
+        queryset = [f"insert {x} user{x} user{x}@x.com" for x in range(1, 1402)]
+        queryset.append(".exit")
+        self.assertFalse(validate_test(queryset, []))
 
 
 if __name__ == "__main__":
