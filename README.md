@@ -25,7 +25,7 @@ At the moment, the following features are supported.
 ├── proposal.pdf
 ├── README.md
 └── src
-    ├── database.c        // main data operations - disk IO, etc
+    ├── database.c        // Loads the Database and Table
     ├── database.h
     ├── executor.c        // accepts compiled statements and executes them
     ├── executor.h
@@ -33,6 +33,8 @@ At the moment, the following features are supported.
     ├── pager.h
     ├── parser.c          // parses the text input into internal statement representation
     ├── parser.h
+    ├── utils.c          // General Utilities - Input Buffer, Prompt, etc
+    ├── utils.h
     ├── globals.h         // important macros, typdefs and structs
     └── main.c            // driver code
 
