@@ -16,7 +16,7 @@ This project will be implemented entirely in C, and version control (along with 
 * run `momodb` (or `momodb.exe` if you're on windows) to start the database
 
 ## Run commands
-```shell
+```
 $ ./momodb <database file>
 ```
 
