@@ -15,6 +15,11 @@ This project will be implemented entirely in C, and version control (along with 
 * run `make` to build the binary file
 * run `momodb` (or `momodb.exe` if you're on windows) to start the database
 
+## Run commands
+```shell
+$ ./momodb <database file>
+```
+
 ## Learning Outcome
 The implementation of this project will include (but will not be limited to) learning the following concepts - 
 1. Dynamic Memory Allocation / re-allocation (using `valgrind` to check for memory leaks)
