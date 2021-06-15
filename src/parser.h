@@ -7,3 +7,10 @@
  *  3. Tokenizing the SQL query into internal representation
  *  4. Preparing the internal representation to be passed to the executor
  */
+
+
+#ifndef parser_h
+#define parser_h
+
+
+#endif
