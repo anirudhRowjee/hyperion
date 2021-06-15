@@ -31,7 +31,7 @@ const uint32_t TABLE_MAX_ROWS = ROWS_PER_PAGE * TABLE_MAX_PAGES;
 
 void print_prompt()
 {
-    printf("H > ");
+    printf("Hy > ");
 }
 
 
