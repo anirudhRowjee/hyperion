@@ -9,3 +9,9 @@
  *  4. Write the cache to disk
  *  5. Get the latest row number / page to write to
  */
+
+#ifndef pager_h
+#define pager_h
+
+
+#endif

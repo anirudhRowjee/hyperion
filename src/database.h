@@ -8,3 +8,9 @@
  *  4. Flushing the Cache to Disk once the database is closed
  */
 
+#ifndef database_h
+#define database_h
+
+
+#endif
+
