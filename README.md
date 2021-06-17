@@ -1,32 +1,53 @@
-# MomoDB - A Simple, Limited SQLite Clone
+# Hyperion - A Lightweight, Minimal SQLite Clone
 
-[Anirudh Rowjee](https://github.com/anirudhRowjee)
+Hyperion is minimal, lightweight implementation of a relational database management system written in Pure C.
+At the moment, the following features are supported.
 
-## Aim
-The aim of this project is to implement a simple, persistent database management system. The system will be able to handle a minimal subset of SQL (limited to a single table, `INSERT` and `SELECT`), and will persist data on to disk.
+* [x] Single Static Table
+* [x] `SELECT` queries
+* [x] `INSERT` queries
+* [x] In-Memory Storage
+* [x] Persistance to disk
+* [x] Minimal SQL Parsing and SQLite Meta-Command Support
+* [ ] B-Tree Support
 
-The Planning and Design on this database will mostly be inspired by SQLite, given the wealth of documentation / implementation available on said implementation.
+## Installation
+1. Clone this repository using `git clone`
+2. `cd` into the directory you cloned into
+3. Run `make` (ensure you have `make` and `gcc` installed)
+4. Run the executable built (i.e. `./hyperion`)
 
-This project will be implemented entirely in C, and version control (along with a Github Repository) will be used to keep track of all the work.
-
-## Usage
-* Ensure you have `gcc` and `make` installed
-* Clone this Repository using `git clone`
-* run `make` to build the binary file
-* run `momodb` (or `momodb.exe` if you're on windows) to start the database
-
-## Run commands
+## Project Structure
 ```
-$ ./momodb <database file>
+.
+├── Makefile
+├── proposal.pdf
+├── test.py               // rudimentary testing script to mock Rspec
+├── README.md
+└── src
+    ├── database.c        // Loads the Database and Table
+    ├── database.h
+    ├── executor.c        // accepts compiled statements and executes them
+    ├── executor.h
+    ├── pager.c           // Memory IO and the Cursor Abstraction
+    ├── pager.h
+    ├── parser.c          // parses the text input into internal statement representation
+    ├── parser.h
+    ├── utils.c          // General Utilities - Input Buffer, Prompt, etc
+    ├── utils.h
+    ├── globals.h         // important macros, typdefs and structs
+    └── main.c            // driver code
+
+1 directory, 13 files
 ```
 
-## Learning Outcome
-The implementation of this project will include (but will not be limited to) learning the following concepts - 
-1. Dynamic Memory Allocation / re-allocation (using `valgrind` to check for memory leaks)
-2. Structures and Pointers
-3. Minimal SQL parser and tokenizer implementation
-4. Serializing/Deserializing Data Structures to bytes
-5. Writing/reading serialized data to/from disk
-6. BTree implementation
+## Contributing
+1. Fork this repository
+2. Clone the forked repository
+3. Switch to a new branch within the repository using `git checkout -b <your branch name>`
+4. Make all your changes within your branch - don't forget to commit often!
+5. Once you're done, push your changes to the origin using `git push -u origin <your branch name>`
+6. Open a Pull Request, and await code review!
 
-
+## About
+This Project drew inspiration from [this](https://cstack.github.io/db_tutorial/) tutorial.

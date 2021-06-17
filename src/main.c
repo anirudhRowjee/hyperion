@@ -8,7 +8,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-// gcc -o momodb src/globals.h src/utils.c src/parser.c src/executor.c src/database.c src/main.c
+// gcc -o hyperion src/globals.h src/utils.c src/parser.c src/executor.c src/database.c src/main.c
 
 #include "globals.h"
 #include "utils.h"
@@ -18,7 +18,7 @@
 #include "executor.h"
 
 /*
- * MomoDB - A Simple SQLite clone
+ * Hyperion - A Simple SQLite clone
  *
  * As of now, There exists only a single table
  * ---------------------------------------------
@@ -27,7 +27,7 @@
  *  email       varchar(255)
  *  -------------------------------------------
  *
- *  MomoDB supports Insertion and Read operations.
+ *  Hyperion supports Insertion and Read operations.
  */
 
 

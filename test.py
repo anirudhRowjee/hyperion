@@ -1,9 +1,9 @@
-# testing script for MomoDB
+# testing script for Hyperion
 from typing import List, Tuple
 import unittest
 from subprocess import run, PIPE
 
-DATABASE_RAW_COMMAND = "./momodb"
+DATABASE_RAW_COMMAND = "./hyperion"
 
 
 def get_commands_from_array(command_array):
@@ -43,7 +43,7 @@ def validate_test(command_list, target_output_list):
 class BasicTest(unittest.TestCase):
     # sanity checks
     def test_basic_prompt(self):
-        self.assertTrue(validate_test([".exit"], ["MomoDB > "]))
+        self.assertTrue(validate_test([".exit"], ["H > "]))
 
 
 class QueryTest(unittest.TestCase):
@@ -53,10 +53,10 @@ class QueryTest(unittest.TestCase):
             validate_test(
                 ["insert 1 A abc@amail.com", "select", ".exit"],
                 [
-                    "MomoDB > Executed",
-                    "MomoDB > (1, A, abc@amail.com)",
+                    "H > Executed",
+                    "H > (1, A, abc@amail.com)",
                     "Executed",
-                    "MomoDB > ",
+                    "H > ",
                 ],
             )
         )

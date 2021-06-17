@@ -73,7 +73,7 @@ void close_input_buffer(InputBuffer* input_buffer)
 
 
 // utility to print the prompt
-void print_prompt() { printf("MomoDB > ");}
+void print_prompt() { printf("H > ");}
 
 // utility to print a row
 void print_row(Row* row)
